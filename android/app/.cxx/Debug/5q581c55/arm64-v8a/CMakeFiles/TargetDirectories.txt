@@ -1,0 +1,2 @@
+D:/FLUTTER2025/shortcut_widget_flutter/android/app/.cxx/Debug/5q581c55/arm64-v8a/CMakeFiles/edit_cache.dir
+D:/FLUTTER2025/shortcut_widget_flutter/android/app/.cxx/Debug/5q581c55/arm64-v8a/CMakeFiles/rebuild_cache.dir
