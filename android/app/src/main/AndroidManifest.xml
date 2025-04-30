@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="shortcut_widget_flutter"
+        android:label="Shortcut"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
