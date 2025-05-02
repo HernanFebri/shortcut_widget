@@ -7,86 +7,88 @@ class OnboardingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return IntroductionScreen(
-      pages: [
-        PageViewModel(
-          title: "Welcome to the App",
-          body: "This is the first introduction page.",
-          image: Image.asset("assets/images/introduction1.png"),
-          decoration: PageDecoration(
-            imageFlex: 3,
-            bodyFlex: 1,
-            bodyTextStyle: AppTextStyles.medium,
-            imagePadding: EdgeInsets.all(24.0),
-            titleTextStyle: TextStyle(
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
+    return Scaffold(
+      body: IntroductionScreen(
+        pages: [
+          PageViewModel(
+            title: "Welcome to the App",
+            body: "This is the first introduction page.",
+            image: Image.asset("assets/images/introduction1.png"),
+            decoration: PageDecoration(
+              imageFlex: 3,
+              bodyFlex: 1,
+              bodyTextStyle: AppTextStyles.medium,
+              imagePadding: EdgeInsets.all(24.0),
+              titleTextStyle: TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
-        PageViewModel(
-          title: "Discover Features",
-          body: "Learn about the great features of this app.",
-          image: Image.asset("assets/images/introduction2.png"),
-          decoration: PageDecoration(
-            imageFlex: 3,
-            bodyFlex: 1,
-            bodyTextStyle: AppTextStyles.medium,
-            imagePadding: EdgeInsets.all(24.0),
-            titleTextStyle: TextStyle(
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
+          PageViewModel(
+            title: "Discover Features",
+            body: "Learn about the great features of this app.",
+            image: Image.asset("assets/images/introduction2.png"),
+            decoration: PageDecoration(
+              imageFlex: 3,
+              bodyFlex: 1,
+              bodyTextStyle: AppTextStyles.medium,
+              imagePadding: EdgeInsets.all(24.0),
+              titleTextStyle: TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
-        ),
-        PageViewModel(
-          title: "Get Started",
-          body: "Let's get started with using the app!",
-          image: Image.asset("assets/images/introduction1.png"),
-          decoration: PageDecoration(
-            imageFlex: 3,
-            bodyFlex: 1,
-            bodyTextStyle: AppTextStyles.medium,
-            imagePadding: EdgeInsets.all(24.0),
-            titleTextStyle: TextStyle(
-              fontSize: 22.0,
-              fontWeight: FontWeight.bold,
+          PageViewModel(
+            title: "Get Started",
+            body: "Let's get started with using the app!",
+            image: Image.asset("assets/images/introduction1.png"),
+            decoration: PageDecoration(
+              imageFlex: 3,
+              bodyFlex: 1,
+              bodyTextStyle: AppTextStyles.medium,
+              imagePadding: EdgeInsets.all(24.0),
+              titleTextStyle: TextStyle(
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           ),
+        ],
+        onDone: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const OnboardingPage1()),
+          );
+        },
+        onSkip: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const OnboardingPage1()),
+          );
+        },
+        showSkipButton: true,
+        skip: Text(
+          "Skip",
+          style: AppTextStyles.medium,
         ),
-      ],
-      onDone: () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const OnboardingPage1()),
-        );
-      },
-      onSkip: () {
-        Navigator.pushReplacement(
-          context,
-          MaterialPageRoute(builder: (context) => const OnboardingPage1()),
-        );
-      },
-      showSkipButton: true,
-      skip: Text(
-        "Skip",
-        style: AppTextStyles.medium,
-      ),
-      next: Icon(
-        Icons.arrow_forward,
-        size: 24.0,
-      ),
-      done: Text(
-        "Done",
-        style: AppTextStyles.medium,
-      ),
-      dotsDecorator: const DotsDecorator(
-        size: Size(10.0, 10.0),
-        activeSize: Size(22.0, 10.0),
-        activeColor: Colors.blue,
-        color: Colors.black26,
-        spacing: EdgeInsets.symmetric(horizontal: 3.0),
-        shape: StadiumBorder(),
+        next: Icon(
+          Icons.arrow_forward,
+          size: 24.0,
+        ),
+        done: Text(
+          "Done",
+          style: AppTextStyles.medium,
+        ),
+        dotsDecorator: const DotsDecorator(
+          size: Size(10.0, 10.0),
+          activeSize: Size(22.0, 10.0),
+          activeColor: Colors.blue,
+          color: Colors.black26,
+          spacing: EdgeInsets.symmetric(horizontal: 3.0),
+          shape: StadiumBorder(),
+        ),
       ),
     );
   }

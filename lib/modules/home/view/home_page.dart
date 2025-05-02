@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shortcut_widget_flutter/misc/color_style.dart';
 
 import '../../../misc/text_style.dart';
 import '../../onboarding/view/onboarding_page.dart';
@@ -25,10 +26,12 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: AppColors.secondaryColor,
         title: Text(
           "Flutter Shortcuts",
-          style: AppTextStyles.extraLarge,
+          style: AppTextStyles.extraLarge.copyWith(
+            color: AppColors.textSecondaryColor,
+          ),
         ),
         centerTitle: true,
         actions: [
@@ -61,14 +64,16 @@ class HomePage extends StatelessWidget {
                 }
               },
               child: Container(
-                color: Colors.blueAccent,
+                color: AppColors.primaryColor,
                 child: Center(
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Text(
                       itemNames[index],
                       textAlign: TextAlign.center,
-                      style: AppTextStyles.medium,
+                      style: AppTextStyles.medium.copyWith(
+                        color: AppColors.textSecondaryColor,
+                      ),
                     ),
                   ),
                 ),
